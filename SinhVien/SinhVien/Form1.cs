@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Configuration;
 
 
 namespace SinhVien
@@ -71,7 +72,25 @@ namespace SinhVien
 
         private void btsua_Click(object sender, EventArgs e)
         {
-
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Bạn có đồng ý sửa lại thông tin không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                string sql = string.Format(@"Update NhanVien set MaNV = @MaNV, TenNV = @TenNV, NgaySinh = @NgaySinh,
+                        GioiTinh = @GioiTinh, SoDT = @SoDT, MaPB = @MaPB, Picture = @Picture where MaNV ='{0}'", tbmanv.Text);
+                string[] name = { "@MaNV", "@TenNV", "@NgaySinh", "@GioiTinh", "@SoDT", "@MaPB", "@Picture" };
+                bool gt = rdNam.Checked == true ? true : false;
+                object[] value = { tbmanv.Text, tbten.Text, dtpkdate.Value, gt, tbsdt.Text, cbbphongban.SelectedValue, lbanh.Text };
+                KetNoi.moKetNoi();
+                KetNoi.updateData(sql, value, name, 7);
+                loadData();
+                KetNoi.dongKetNoi();
+                MessageBox.Show("Đã Sửa thành công vào CSDL");
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã hủy sửa thông tin này!");
+            }
         }
 
         private void lbanh_Click(object sender, EventArgs e)
@@ -94,6 +113,11 @@ namespace SinhVien
                 KetNoi.updateData(sql, value, name, 0);
                 loadData();
                 KetNoi.dongKetNoi();
+                MessageBox.Show("Bạn đã xóa thành công");
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã hủy xóa đối tượng này!");
             }
         }
 
@@ -115,11 +139,33 @@ namespace SinhVien
             tbsdt.Text = dtgvshow.Rows[i].Cells[4].Value.ToString();
             cbbphongban.SelectedValue = dtgvshow.Rows[i].Cells[5].Value.ToString();           
             lbanh.Text = dtgvshow.Rows[i].Cells[6].Value.ToString();
+            string PathAnh = ConfigurationManager.AppSettings.Get("DuongDanAnh") + "\\"+lbanh.Text;
+            if (File.Exists(PathAnh))
+            {
+                pictureBox1.Image = Image.FromFile(PathAnh);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else
+            {
+                pictureBox1.Image = null;
+            }
         }
 
         private void dtgvshow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btlammoi_Click(object sender, EventArgs e)
+        {
+            tbmanv.Text = "";
+            tbten.Text = "";
+            tbsdt.Text = "";
+            rdNam.Checked = false;
+            rdNu.Checked = false;
+            cbbphongban.SelectedValue = "";
+            dtpkdate.Value = DateTime.Today;
+            pictureBox1.Image = null;
         }
     }
 }
