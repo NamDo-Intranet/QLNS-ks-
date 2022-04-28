@@ -38,17 +38,24 @@ namespace SinhVien
             loadPB();
             loadData();
         }
-
         private void btthem_Click(object sender, EventArgs e)
         {
-            string sql = "Insert into NhanVien Values(@MaNV, @TenNV, @NgaySinh, @GioiTinh, @SDT, @MaPhong, @Picture)";
-            string[] name = { "@MaNV", "@TenNV", "@NgaySinh", "@GioiTinh", "@SDT", "@MaPhong", "@Picture" };
-            bool gt = rdNam.Checked == true ? true : false;
-            object[] value = { tbmanv.Text, tbten.Text, dtpkdate.Value, gt, tbsdt.Text, cbbphongban.SelectedValue, lbanh.Text};
-            KetNoi.moKetNoi();
-            KetNoi.updateData(sql, value, name, 7);
-            loadData();
-            KetNoi.dongKetNoi();
+            if (KetNoi.ktraMaNV(tbmanv.Text) == 0)
+            {
+                string sql = "Insert into NhanVien Values(@MaNV, @TenNV, @NgaySinh, @GioiTinh, @SDT, @MaPhong, @Picture)";
+                string[] name = { "@MaNV", "@TenNV", "@NgaySinh", "@GioiTinh", "@SDT", "@MaPhong", "@Picture" };
+                bool gt = rdNam.Checked == true ? true : false;
+                object[] value = { tbmanv.Text, tbten.Text, dtpkdate.Value, gt, tbsdt.Text, cbbphongban.SelectedValue, lbanh.Text };
+                KetNoi.moKetNoi();
+                KetNoi.updateData(sql, value, name, 7);
+                loadData();
+                KetNoi.dongKetNoi();
+                MessageBox.Show("Đã thêm thành công vào CSDL");
+            }
+            else
+            {
+                MessageBox.Show("Mã Nhân viên đã tồn tại. Vui lòng nhập mã khác!");
+            }
         }
 
         private void btchon_Click(object sender, EventArgs e)
@@ -108,6 +115,11 @@ namespace SinhVien
             tbsdt.Text = dtgvshow.Rows[i].Cells[4].Value.ToString();
             cbbphongban.SelectedValue = dtgvshow.Rows[i].Cells[5].Value.ToString();           
             lbanh.Text = dtgvshow.Rows[i].Cells[6].Value.ToString();
+        }
+
+        private void dtgvshow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

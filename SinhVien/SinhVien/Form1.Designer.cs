@@ -36,6 +36,7 @@ namespace SinhVien
             this.label6 = new System.Windows.Forms.Label();
             this.dtgvshow = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btlammoi = new System.Windows.Forms.Button();
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.rdNam = new System.Windows.Forms.RadioButton();
             this.gt = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace SinhVien
             this.lbanh = new System.Windows.Forms.Label();
             this.btchon = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btlammoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvshow)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -116,6 +116,7 @@ namespace SinhVien
             this.dtgvshow.Size = new System.Drawing.Size(722, 230);
             this.dtgvshow.TabIndex = 6;
             this.dtgvshow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvshow_CellClick);
+            this.dtgvshow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvshow_CellContentClick);
             // 
             // panel1
             // 
@@ -140,6 +141,15 @@ namespace SinhVien
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(432, 272);
             this.panel1.TabIndex = 7;
+            // 
+            // btlammoi
+            // 
+            this.btlammoi.Location = new System.Drawing.Point(321, 158);
+            this.btlammoi.Name = "btlammoi";
+            this.btlammoi.Size = new System.Drawing.Size(75, 23);
+            this.btlammoi.TabIndex = 21;
+            this.btlammoi.Text = "Làm Mới";
+            this.btlammoi.UseVisualStyleBackColor = true;
             // 
             // rdNu
             // 
@@ -255,16 +265,16 @@ namespace SinhVien
             // 
             // lbanh
             // 
-            this.lbanh.Location = new System.Drawing.Point(125, 200);
+            this.lbanh.Location = new System.Drawing.Point(124, 234);
             this.lbanh.Name = "lbanh";
-            this.lbanh.Size = new System.Drawing.Size(73, 31);
+            this.lbanh.Size = new System.Drawing.Size(94, 18);
             this.lbanh.TabIndex = 2;
-            this.lbanh.Text = "C:\\Users\\May-20\\Documents\\Nam\\anh";
+            this.lbanh.Text = "DuongDanAnh";
             this.lbanh.Click += new System.EventHandler(this.lbanh_Click);
             // 
             // btchon
             // 
-            this.btchon.Location = new System.Drawing.Point(43, 200);
+            this.btchon.Location = new System.Drawing.Point(43, 234);
             this.btchon.Name = "btchon";
             this.btchon.Size = new System.Drawing.Size(75, 23);
             this.btchon.TabIndex = 1;
@@ -275,20 +285,11 @@ namespace SinhVien
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(43, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 163);
+            this.pictureBox1.Size = new System.Drawing.Size(162, 213);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btlammoi
-            // 
-            this.btlammoi.Location = new System.Drawing.Point(321, 158);
-            this.btlammoi.Name = "btlammoi";
-            this.btlammoi.Size = new System.Drawing.Size(75, 23);
-            this.btlammoi.TabIndex = 21;
-            this.btlammoi.Text = "Làm Mới";
-            this.btlammoi.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

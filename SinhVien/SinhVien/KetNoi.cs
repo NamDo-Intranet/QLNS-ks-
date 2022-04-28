@@ -31,6 +31,15 @@ namespace SinhVien
         {
             conn.Close();
         }
+        #region
+        static public int ktraMaNV(string ma)
+        {
+            string sql = string.Format("select count(*) from NhanVien where MaNV= '{0}'", ma);
+            cmd = new SqlCommand(sql, conn);
+            int soluong = (int)cmd.ExecuteScalar();
+            return soluong;
+        }
+        #endregion
         static public DataTable getData(string sql)
         {
             DataTable dt = new DataTable();
