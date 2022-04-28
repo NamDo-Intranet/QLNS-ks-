@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace SinhVien
 {
     public partial class Form1 : Form
@@ -56,8 +57,57 @@ namespace SinhVien
             if (openfile.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image = Image.FromFile(openfile.FileName);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 lbanh.Text = Path.GetFileName(openfile.FileName);
             }
+        }
+
+        private void btsua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbanh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btxoa_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Bạn có muốn xoá không", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if(dr == DialogResult.Yes)
+            {
+                int i = dtgvshow.CurrentCell.RowIndex;
+                string ma = dtgvshow.Rows[i].Cells[0].Value.ToString();
+                string sql = string.Format("Delete from NhanVien where MaNV='{0}'", ma);
+                string[] name = { };
+                object[] value = { };
+                KetNoi.moKetNoi();
+                KetNoi.updateData(sql, value, name, 0);
+                loadData();
+                KetNoi.dongKetNoi();
+            }
+        }
+
+        private void dtgvshow_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dtgvshow.CurrentCell.RowIndex;
+            tbmanv.Text = dtgvshow.Rows[i].Cells[0].Value.ToString();
+            tbten.Text = dtgvshow.Rows[i].Cells[1].Value.ToString();
+            dtpkdate.Text = dtgvshow.Rows[i].Cells[2].Value.ToString();
+            string gt = dtgvshow.Rows[i].Cells[3].Value.ToString();
+            if (gt == "True")
+            {
+                rdNam.Checked = true;
+            }
+            else
+            {
+                rdNu.Checked = true;
+            }
+            tbsdt.Text = dtgvshow.Rows[i].Cells[4].Value.ToString();
+            cbbphongban.SelectedValue = dtgvshow.Rows[i].Cells[5].Value.ToString();           
+            lbanh.Text = dtgvshow.Rows[i].Cells[6].Value.ToString();
         }
     }
 }

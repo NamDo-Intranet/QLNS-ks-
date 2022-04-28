@@ -43,10 +43,10 @@ namespace SinhVien
             cmd = new SqlCommand(sql, conn);
             cmd.Parameters.Clear();
             for(int i = 0; i < slthamso; i++)
-            {
                 cmd.Parameters.AddWithValue(name[i], value[i]);
-                cmd.ExecuteNonQuery();
-            }
+                
+            cmd.ExecuteNonQuery();
+            
         }
     }
 }

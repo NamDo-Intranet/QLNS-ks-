@@ -18,3 +18,13 @@ C:\Users\zodia\Desktop\Nam18\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.Generat
 C:\Users\zodia\Desktop\Nam18\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.CoreCompileInputs.cache
 C:\Users\zodia\Desktop\Nam18\SinhVien\SinhVien\obj\Debug\SinhVien.exe
 C:\Users\zodia\Desktop\Nam18\SinhVien\SinhVien\obj\Debug\SinhVien.pdb
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\bin\Debug\SinhVien.exe.config
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\bin\Debug\SinhVien.exe
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\bin\Debug\SinhVien.pdb
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.AssemblyReference.cache
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\obj\Debug\SinhVien.Form1.resources
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\obj\Debug\SinhVien.Properties.Resources.resources
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.GenerateResource.cache
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\obj\Debug\SinhVien.csproj.CoreCompileInputs.cache
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\obj\Debug\SinhVien.exe
+C:\Users\May-20\Source\Repos\QLNS-ks-\SinhVien\SinhVien\obj\Debug\SinhVien.pdb

@@ -51,6 +51,7 @@ namespace SinhVien
             this.lbanh = new System.Windows.Forms.Label();
             this.btchon = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btlammoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvshow)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,11 +113,13 @@ namespace SinhVien
             this.dtgvshow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvshow.Location = new System.Drawing.Point(51, 315);
             this.dtgvshow.Name = "dtgvshow";
-            this.dtgvshow.Size = new System.Drawing.Size(626, 230);
+            this.dtgvshow.Size = new System.Drawing.Size(722, 230);
             this.dtgvshow.TabIndex = 6;
+            this.dtgvshow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvshow_CellClick);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btlammoi);
             this.panel1.Controls.Add(this.rdNu);
             this.panel1.Controls.Add(this.rdNam);
             this.panel1.Controls.Add(this.gt);
@@ -194,6 +197,7 @@ namespace SinhVien
             this.btxoa.TabIndex = 14;
             this.btxoa.Text = "Xoá";
             this.btxoa.UseVisualStyleBackColor = true;
+            this.btxoa.Click += new System.EventHandler(this.btxoa_Click);
             // 
             // btsua
             // 
@@ -203,6 +207,7 @@ namespace SinhVien
             this.btsua.TabIndex = 13;
             this.btsua.Text = "Sửa";
             this.btsua.UseVisualStyleBackColor = true;
+            this.btsua.Click += new System.EventHandler(this.btsua_Click);
             // 
             // btthem
             // 
@@ -250,17 +255,16 @@ namespace SinhVien
             // 
             // lbanh
             // 
-            this.lbanh.AutoSize = true;
-            this.lbanh.Location = new System.Drawing.Point(163, 218);
+            this.lbanh.Location = new System.Drawing.Point(125, 200);
             this.lbanh.Name = "lbanh";
-            this.lbanh.Size = new System.Drawing.Size(35, 13);
+            this.lbanh.Size = new System.Drawing.Size(73, 31);
             this.lbanh.TabIndex = 2;
-            this.lbanh.Text = "label7";
-            this.lbanh.Visible = false;
+            this.lbanh.Text = "C:\\Users\\May-20\\Documents\\Nam\\anh";
+            this.lbanh.Click += new System.EventHandler(this.lbanh_Click);
             // 
             // btchon
             // 
-            this.btchon.Location = new System.Drawing.Point(43, 213);
+            this.btchon.Location = new System.Drawing.Point(43, 200);
             this.btchon.Name = "btchon";
             this.btchon.Size = new System.Drawing.Size(75, 23);
             this.btchon.TabIndex = 1;
@@ -277,6 +281,15 @@ namespace SinhVien
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btlammoi
+            // 
+            this.btlammoi.Location = new System.Drawing.Point(321, 158);
+            this.btlammoi.Name = "btlammoi";
+            this.btlammoi.Size = new System.Drawing.Size(75, 23);
+            this.btlammoi.TabIndex = 21;
+            this.btlammoi.Text = "Làm Mới";
+            this.btlammoi.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,7 +305,6 @@ namespace SinhVien
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -322,6 +334,7 @@ namespace SinhVien
         private System.Windows.Forms.RadioButton rdNam;
         private System.Windows.Forms.Label gt;
         private System.Windows.Forms.DateTimePicker dtpkdate;
+        private System.Windows.Forms.Button btlammoi;
     }
 }
 
