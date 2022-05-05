@@ -139,7 +139,7 @@ namespace SinhVien
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(26, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(468, 272);
+            this.panel1.Size = new System.Drawing.Size(468, 286);
             this.panel1.TabIndex = 7;
             // 
             // btlammoi
@@ -216,7 +216,7 @@ namespace SinhVien
             this.btsua.Name = "btsua";
             this.btsua.Size = new System.Drawing.Size(75, 23);
             this.btsua.TabIndex = 9;
-            this.btsua.Text = "Fix";
+            this.btsua.Text = "Update";
             this.btsua.UseVisualStyleBackColor = true;
             this.btsua.Click += new System.EventHandler(this.btsua_Click);
             // 
@@ -261,12 +261,12 @@ namespace SinhVien
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(529, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(244, 272);
+            this.panel2.Size = new System.Drawing.Size(244, 286);
             this.panel2.TabIndex = 8;
             // 
             // lbanh
             // 
-            this.lbanh.Location = new System.Drawing.Point(162, 225);
+            this.lbanh.Location = new System.Drawing.Point(165, 251);
             this.lbanh.Name = "lbanh";
             this.lbanh.Size = new System.Drawing.Size(79, 18);
             this.lbanh.TabIndex = 2;
@@ -276,7 +276,7 @@ namespace SinhVien
             // 
             // btchon
             // 
-            this.btchon.Location = new System.Drawing.Point(89, 213);
+            this.btchon.Location = new System.Drawing.Point(85, 241);
             this.btchon.Name = "btchon";
             this.btchon.Size = new System.Drawing.Size(74, 36);
             this.btchon.TabIndex = 12;
@@ -289,7 +289,7 @@ namespace SinhVien
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(43, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(162, 225);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

@@ -38,6 +38,11 @@ namespace SinhVien
             KetNoi.moKetNoi();
             loadPB();
             loadData();
+            if (dtgvshow != null)
+            {
+                dtgvshow.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dtgvshow.Columns[dtgvshow.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            } 
         }
         private void btthem_Click(object sender, EventArgs e)
         {
